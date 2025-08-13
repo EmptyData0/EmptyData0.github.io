@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'LXGWWenKaiMonoGB';
+    src: local('LXGWWenKaiMonoGB'), 
+         url('LXGWWenKaiMonoGB.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+}
