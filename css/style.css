@@ -458,7 +458,7 @@ button {
   clear: both;
 }
 .markdown-body {
-  font-family: 'Comic-Sans-MS', 'LXGWWenkaiMonoGB', sans-serif;
+  font-family: 'Geist Variable', 'LXGWWenkaiMonoGB', sans-serif;
   font-size: 16px;
 }
 .markdown-body blockquote {
@@ -584,7 +584,7 @@ button {
 .markdown-body .h4,
 .markdown-body .h5,
 .markdown-body .h6 {
-  font-family: 'Comic-Sans-MS', 'LXGWWenkaiMonoGB', sans-serif;
+  font-family: 'Geist Variable', 'LXGWWenkaiMonoGB', sans-serif;
   color: var(--second-text-color);
   line-height: 1.5;
 }
@@ -1337,7 +1337,7 @@ pre .deletion {
   border-radius: 50px;
 }
 .article-copyright-info-container {
-  font-family: 'Comic-Sans-MS', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif;
+  font-family: 'Geist Variable', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif;
   position: relative;
   width: 100%;
   box-sizing: border-box;
@@ -2612,7 +2612,7 @@ html.is-animating .scroll-progress-bar {
   width: 100%;
   font-size: 0.92rem;
   box-sizing: border-box;
-  font-family: 'Comic-Sans-MS', 'LXGWWenkaiMonoGB', 'Noto Sans', 'Noto Sans SC', sans-serif;
+  font-family: 'Geist Variable', 'LXGWWenkaiMonoGB', 'Noto Sans', 'Noto Sans SC', sans-serif;
 }
 .post-toc-wrap .post-toc .toc-title {
   font-size: 0.8rem;
@@ -5565,7 +5565,7 @@ html.is-animating .transition-fade-down {
   font-size: 1.4rem;
   line-height: 1.5;
   color: var(--second-text-color);
-  font-family: 'Comic-Sans-MS', 'LXGWWenkaiMonoGB', 'Noto Sans SC', sans-serif;
+  font-family: 'Geist Variable', 'LXGWWenkaiMonoGB', 'Noto Sans SC', sans-serif;
   margin: 0;
 }
 @media (max-width: 768px) {
