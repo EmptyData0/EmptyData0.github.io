@@ -1,0 +1,423 @@
+/* ==================== 基础布局 ==================== */
+.lottery-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== 按钮样式 ==================== */
+.lottery-button {
+  display: inline-block;
+  margin: 5px;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.lottery-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.lottery-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.danger-button {
+  background-color: #f44336;
+}
+
+.danger-button:hover {
+  background-color: #d32f2f;
+}
+
+.back-button {
+  background-color: #2196F3;
+}
+
+.back-button:hover {
+  background-color: #0b7dda;
+}
+
+/* ==================== 抽奖区域 ==================== */
+.action-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.counter {
+  margin-left: auto;
+  font-size: 14px;
+  color: #666;
+  background-color: #f0f0f0;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.results-area {
+  margin: 30px 0;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.pool-display {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ==================== 奖品展示 ==================== */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.result-item {
+  padding: 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.result-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.special-prize {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+}
+
+.prize-category {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.prize-name {
+  font-size: 16px;
+}
+
+/* ==================== 奖品池 ==================== */
+.prize-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.prize-category-item {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.sub-prizes {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.sub-prize-item {
+  padding: 5px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* ==================== 保底标记 ==================== */
+.guaranteed-badge {
+  display: inline-block;
+  padding: 2px 5px;
+  background-color: #ff9800;
+  color: white;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-left: 5px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* ==================== 弹窗样式 ==================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  animation: modalopen 0.4s;
+}
+
+@keyframes modalopen {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #333;
+}
+
+.guaranteed-notice {
+  color: #ff9800;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ==================== 历史记录页面 ==================== */
+.lottery-history-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.history-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.history-list {
+  margin-top: 20px;
+}
+
+.history-record {
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+}
+
+.history-record:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.record-time {
+  font-weight: bold;
+}
+
+.record-count {
+  color: #666;
+  font-size: 14px;
+}
+
+.record-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.record-item {
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.record-item.special {
+  background-color: #fff3cd;
+}
+
+/* ==================== 加载状态 ==================== */
+.loading-dots {
+  display: inline-block;
+  width: 20px;
+  text-align: left;
+}
+
+.loading-dots::after {
+  content: '...';
+  animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
+
+/* ==================== 错误提示 ==================== */
+.lottery-error {
+  padding: 20px;
+  background-color: #ffebee;
+  color: #f44336;
+  border-radius: 4px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 600px) {
+  .action-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .counter {
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .results-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .record-items {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    width: 90%;
+    margin: 30% auto;
+  }
+}
+
+/* ==================== 新增抽数相关样式 ==================== */
+.ticket-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #e3f2fd;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.ticket-button {
+  padding: 12px 24px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.ticket-button:hover {
+  background-color: #0b7dda;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.ticket-counter {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #0d47a1;
+  font-weight: bold;
+}
+
+.toast-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.toast-message.show {
+  opacity: 1;
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+  .ticket-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .ticket-counter {
+    font-size: 14px;
+  }
+}
+
+/* 顶级奖品特殊样式 */
+.top-prize {
+  background: linear-gradient(135deg, #fff3cd, #ffe69b);
+  border: 2px solid #ffc107;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.stars {
+  margin-top: 5px;
+  font-size: 20px;
+  color: #ffc107;
+  text-shadow: 0 0 5px rgba(255, 193, 7, 0.8);
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px rgba(255, 193, 7, 0.5); }
+  to { box-shadow: 0 0 20px rgba(255, 193, 7, 0.8); }
+}
