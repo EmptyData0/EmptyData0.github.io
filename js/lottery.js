@@ -317,7 +317,7 @@ const LotteryManager = {
     this.state.tickets += 1;
     this.updateTicketDisplay();
     this.saveState();
-    this.showToast("+1抽~！");
+    this.showToast("+1抽~");
   },
 
   useTicket(count) {
