@@ -278,6 +278,55 @@
             
     
             
+                
+                    <style>
+  /* 霞鹜文楷字体定义 - 修复版 */
+  @font-face {
+    font-family: 'LXGWWenKaiMonoGB';
+    src: 
+      /* 本地文件优先 */
+      local('LXGW WenKai Mono GB'),
+      local('LXGWWenKaiMonoGB'),
+      /* 网络路径备用 */
+      url('/fonts/LXGWWenKaiMonoGB/LXGWWenKaiMonoGB.woff2') format('woff2'),
+      url('/fonts/LXGWWenKaiMonoGB/LXGWWenKaiMonoGB.ttf') format('truetype'),
+      /* CDN 备用 */
+      url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/files/LXGWWenKaiMonoGB.woff2') format('woff2'),
+      url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/files/LXGWWenKaiMonoGB.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'LXGWWenKaiGB';
+    src: 
+      local('LXGW WenKai GB'),
+      local('LXGWWenKaiGB'),
+      url('/fonts/LXGWWenKaiMonoGB/LXGWWenKaiGB-Medium.woff2') format('woff2'),
+      url('/fonts/LXGWWenKaiMonoGB/LXGWWenKaiGB-Medium.ttf') format('truetype'),
+      url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/files/LXGWWenKaiGB-Medium.woff2') format('woff2'),
+      url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/files/LXGWWenKaiGB-Medium.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  /* 应用字体 */
+  body {
+    font-family: 'LXGWWenKaiMonoGB', 'LXGWWenKaiGB', -apple-system, sans-serif;
+  }
+  
+  /* 加载状态样式 */
+  .fonts-loading body {
+    font-family: -apple-system, sans-serif;
+  }
+  .fonts-loaded body {
+    font-family: 'LXGWWenKaiMonoGB', -apple-system, sans-serif;
+  }
+</style>
+
+            
     
             
                 
