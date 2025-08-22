@@ -146,7 +146,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://emptydata0.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-08-20T12:10:34.391Z">
-<meta property="article:modified_time" content="2025-08-20T12:41:23.561Z">
+<meta property="article:modified_time" content="2025-08-22T13:02:13.645Z">
 <meta property="article:author" content="林汐霞">
 <meta property="article:tag" content="Eulogy">
 <meta property="article:tag" content="▮▮▮">
@@ -233,6 +233,51 @@
 
             
     
+            
+                
+                    <script>
+  (function() {
+    'use strict';
+    
+    const originalTitle = document.title;
+    let welcomeTimeout = null;
+    
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        // 离开页面
+        document.title = "您忘了我嘛qwq ヽ(*o>Д<)o゜";
+        if (welcomeTimeout) {
+          clearTimeout(welcomeTimeout);
+          welcomeTimeout = null;
+        }
+      } else {
+        // 返回页面
+        document.title = "欢迎回来awa ヾ(≧▽≦*)o";
+        
+        // 清理之前的定时器
+        if (welcomeTimeout) clearTimeout(welcomeTimeout);
+        
+        // 设置新定时器
+        welcomeTimeout = setTimeout(() => {
+          document.title = originalTitle;
+          welcomeTimeout = null;
+        }, 2000);
+      }
+    }
+    
+    // 添加事件监听
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    // 页面卸载时清理
+    window.addEventListener('beforeunload', () => {
+      if (welcomeTimeout) {
+        clearTimeout(welcomeTimeout);
+      }
+    });
+    
+  })();
+</script>
+
             
     
             
@@ -862,8 +907,8 @@ const fontPolice = setInterval(() => {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-08-20 20:41:23</span>
-            <span class="mobile">2025-08-20 20:41:23</span>
+            <span class="desktop">2025-08-22 21:02:13</span>
+            <span class="mobile">2025-08-22 21:02:13</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -915,12 +960,12 @@ const fontPolice = setInterval(() => {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.3k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.9k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>4 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>9 分钟</span>
         </span>
     
     
@@ -939,8 +984,8 @@ const fontPolice = setInterval(() => {
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>关于Eulogy，详情请见 <strong><a href="/else">点击这里</a></strong>  </p>
-<h3 id="【霞光】P1-遗忘者"><a href="#【霞光】P1-遗忘者" class="headerlink" title="【霞光】P1 遗忘者"></a>【霞光】P1 遗忘者</h3><p>&emsp;&emsp;自窗外透进来的阳光撕开了她的眼睑，她不情不愿地睁开了紧闭的双眸。</p>
+			<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>关于Eulogy，详情请见 <strong><a href="/else">点击这里</a></strong> 。<br>还有，本人蒟蒻文笔，dalao勿喷，只是想把自己oc故事讲好qwq<br>更新频率不保证，因为我要开学了。  </p>
+<h2 id="第一节：【霞光】"><a href="#第一节：【霞光】" class="headerlink" title="第一节：【霞光】"></a>第一节：【霞光】</h2><h3 id="【霞光】P1-遗忘者"><a href="#【霞光】P1-遗忘者" class="headerlink" title="【霞光】P1 遗忘者"></a>【霞光】P1 遗忘者</h3><p>&emsp;&emsp;自窗外透进来的阳光撕开了她的眼睑，她不情不愿地睁开了紧闭的双眸。</p>
 
 <p>&emsp;&emsp;脑内的思绪繁杂却没什么意义。“所以……我为什么被阳光晒醒了？没道理啊……我记得窗帘……忘了，眼罩……忘了。嘶，怎么回事……”睡眼惺忪的她翻了一圈，“不管了，继续睡。”然而，她并没有睡上回笼觉。一个淡蓝色的方框毫无道理的出现在了她的眼前，尽管她闭上了眼。“……这什么玩意儿这是？”她屡次尝试摆脱无果，只好被迫起床。“我猜这是系统。”她嘟哝着，而后环顾四周，“这还是我家吗？感觉不对劲啊……”</p>
 
@@ -956,8 +1001,35 @@ const fontPolice = setInterval(() => {
 <p>&emsp;&emsp;“正如你所看到的，这张纸是专门给你留下的。具体的原因也不好多说，总之，请您听听我的建议吧。您此刻还没有输入名字吧？我知道你的，你不会取名字（笑）。那么不妨叫做Eulogy吧，没有为什么。嘛，别生气呀，到了合适的时机，你会知道原因的。当然，你现在并不认识我，但我相信我们总会有见面的那一天的~这张纸请您收好，到了合适的时候，它会对你有着很大的帮助~等你初步了解了这个世界后，你再来看看这张纸吧，会有一些新的东西~ </p>
 <p align="right">署名：ヾ(≧▽≦*)o”</p>
 
-<p>&emsp;&emsp;一个字描述她的感受：懵。她看不懂，但她大受震撼。回归最早的问题：我到底叫什么？选择困难症重度患者林某某在PASS掉了脑海中少得可怜的抽象名字、头上长草后，最终选择了Eulogy这个名字。“所以这个人是不是专门想搞我所以把我记忆咔嚓了？”经过思索过后的她在名字框里写上了Eulogy几个字，字迹娟秀，是她的肌肉记忆。哇，我字还是太好了！她满意地按下了确定键。</p>
+<p>&emsp;&emsp;一个字描述她的感受：懵。她看不懂，但她大受震撼。回归最早的问题：我到底叫什么？选择困难症重度患者林某某在PASS掉了脑海中少得可怜的抽象名字、头上长草后，最终选择了Eulogy这个名字。“所以这个人是不是专门想搞我所以把我记忆咔嚓了？”经过思索过后的她在名字框里写上了Eulogy几个字，字迹娟秀，是她的肌肉记忆。哇，我字还是太好了！她满意地按下了确定键。注册之后，那个弹窗的下一个界面是这样的：「请您随心选择您的信仰。」感情这给我穿到诸神愚戏了？她不禁吐槽。即使她不怎么看小说，但是上网强度极高的她也对这本小说略有耳闻（ooc致歉qwq）。但这还是过于离谱了吧？她左看右看，终于在空白中看出了字来。她敲定了自己的选择，选择了……“先等等”键。因为底下关于信仰的说明中说，在这个方框中填写信仰的名称即可加入该信仰的教会，如果没有这位神祇的话自己就会成为这位神祇的缔造者，被称为“创神者”。旁边当然附赠了一个表格，有着目前已经有了的所有神明，在确定前也会有弹窗二次确定。额，说真的，她听到神这个字会觉得“神”有逼格buff加身，然而这些神……似乎都挺，朴实的？(＃°Д°)比如说有个信仰是「睡眠」来着，猜也能猜到祂掌管着睡眠的权柄，或许再拓宽一些，有梦境什么的。组织的名字也通俗易懂，什么“睡友互援会“啊，听着就不是什么正经组织吧？！虽然都不太正经就是了……  </p>
 
+<p>&emsp;&emsp;跳过信仰选择，她来到了下一个界面，应该是什么新人福利（？）之类的，提供了三种道具让她选择，作为她的基础物资。但她怎么看都觉得这是在搞抽象。 </p>
+
+<p>&emsp;&emsp;「1.速冻烤鹅肉。简介：这是一款速冻食品，但与别的速冻食品不同的是，食用它时不需要再加热。这样一来，您就可以随时随地品尝到又老又柴、又干又涩、又硬又塞牙的超绝烤鹅肉啦！当然，如果条件允许的话，还是建议煮一下再吃。备注：规则怪谈之请勿在“万鹅来朝”教徒面前使用，否则后果自负。」 </p>
+
+<p>&emsp;&emsp;「2.镇厄箓*3。简介：这是一次性用品。出品于“祭邪人”。对鬼物一类使用后能产生五秒钟的禁锢以及五秒钟的僵直。非常适合您打不过了的时候跑路~备注：凭借此物可增加进入“祭邪人”的概率。」 </p>
+<p>&emsp;&emsp;「3.考试答案。简介：真理教会入会考试的答案，不保真，但包死。备注：No作（弊）No死。」 </p>
+<p>&emsp;&emsp;我勒个，这都是些什么抽象道具？且容我分析一下。第三个不可能选的，这辈子都不可能选的，我林某某从不作弊……吧？第二个，很明显嘛，还是挺有用的，就是不知道这个机械人……呸，祭邪人是哪个信仰下的……第一个，虽说难吃吧，但是至少能吃吧？我不想饿死……她的脑中闪过了千种画面，不是饿死，就是饿死，她用力摇摇头，作为吃货的她本能选择了第一件道具。欸（自动插入点子王），我的记忆很明显也归记忆管嘛，那我去找「记忆」不就行了？我要不加入记忆？嘛，还是之后再说，我先看看这小纸片是怎么个事情儿……她觉得自己已经对这个世界有了初步的了解了。上面果然多了一些字，但内容却不是那么好懂，虽然之前的也不好懂就是了。新的一段话让她去试试回想、记住自己的模样。同时，让她好好想想自己到底应该信仰哪位神灵。最后一点本就是她想要做的。她收束了心思，快步走向门旁边的洗手台，有镜子。不错，她真的忘记了自己长什么样。不过，真的有人会记得自己长什么样么？她在心里又不禁吐槽。额，我这么喜欢吐槽？她暗暗记下了自己的习惯，也许在寻找记忆的旅途中也许会有帮助。很好，镜子能用，也没有什么乱七八糟的东西，那就看看自己长什么样。 </p>
+
+<p>&emsp;&emsp;她的面容姣好，眸子中似乎有星芒闪烁，琼鼻挺立，嘴唇略微有些苍白，皮肤也没什么血色，但这些交相映衬，反倒托举出了她的气质。但她本人似乎不喜欢清冷御姐的人设，还是当个快快乐乐的吐槽役吧，反差风终究还是吹到了林某某的身上（悲）。她的身材也确实很好，不过最好还是不要多谈她的身材，容易▮▮▮。套了件外套，贴身衣物就是普普通通的衣服，也没什么特色。“哇，我真好看！”她满意地点了点头，然后当她离开镜子的时候，她却再次遗忘了她的长相。“？禁止发送单个标点符号。”她重复了几次，可惜没有什么效果。徒劳无功的她选择了摆烂，而后似乎想起了什么一样，打算在信仰栏写下什么，只不过她最终没有写下，就像她从来没有这个想法一样。她柳眉微蹙，感觉自己好像又忘记了什么东西。
+
+<p>&emsp;&emsp;又是许久之后，她深呼吸一口气，推开房门。从此刻起，她将摒弃之前的名字，作为Eulogy而活着。 </p>
+
+<p>&emsp;&emsp;[数据载入… …] </p>
+
+<p>&emsp;&emsp;[生成玩家：Eulogy  Lv.0] </p>
+
+<p>&emsp;&emsp;[信仰：（暂无），天赋：（无），称号：（无）] </p>
+
+<p>&emsp;&emsp;[副本名称：霞光。难度：新手副本，不计入难度评级。] </p>
+
+<p>&emsp;&emsp;[单人副本，主要目标：逃离白霞酒店。] </p>
+
+<p>&emsp;&emsp;[游玩愉… …导入模因▮-▮▮▮] </p>
+
+<p>&emsp;&emsp;[异化成功！主要目标已更改：“然长夜无终。”] </p>
+
+<p>&emsp;&emsp;[努力活下去吧~] </p>
 		</div>
 
 		
@@ -971,7 +1043,7 @@ const fontPolice = setInterval(() => {
         
             <li>
                 <strong>更新于
-                    :</strong> 2025-08-20 20:41:23
+                    :</strong> 2025-08-22 21:02:13
             </li>
         
         <li>
@@ -1079,7 +1151,7 @@ const fontPolice = setInterval(() => {
 	<div class="post-toc">
 		<div class="toc-title">目录</div>
 		<div class="page-title"> Eulogy（题目未定） </div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90%E9%9C%9E%E5%85%89%E3%80%91P1-%E9%81%97%E5%BF%98%E8%80%85"><span class="nav-text">【霞光】P1 遗忘者</span></a></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E8%8A%82%EF%BC%9A%E3%80%90%E9%9C%9E%E5%85%89%E3%80%91"><span class="nav-text">第一节：【霞光】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90%E9%9C%9E%E5%85%89%E3%80%91P1-%E9%81%97%E5%BF%98%E8%80%85"><span class="nav-text">【霞光】P1 遗忘者</span></a></li></ol></li></ol>
 
 	</div>
 </div>
@@ -1110,7 +1182,7 @@ const fontPolice = setInterval(() => {
                     </span>
                     
                         <span>
-                            共 3k 字
+                            共 4.5k 字
                         </span>
                     
                 </p>

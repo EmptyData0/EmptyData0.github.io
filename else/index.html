@@ -145,8 +145,8 @@
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://emptydata0.github.io/images/redefine-og.webp">
-<meta property="article:published_time" content="2025-08-20T12:41:07.171Z">
-<meta property="article:modified_time" content="2025-08-20T12:22:54.391Z">
+<meta property="article:published_time" content="2025-08-22T13:06:30.641Z">
+<meta property="article:modified_time" content="2025-08-22T13:06:30.641Z">
 <meta property="article:author" content="林汐霞">
 <meta property="article:tag" content="em,eu">
 <meta name="twitter:card" content="summary">
@@ -232,6 +232,51 @@
 
             
     
+            
+                
+                    <script>
+  (function() {
+    'use strict';
+    
+    const originalTitle = document.title;
+    let welcomeTimeout = null;
+    
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        // 离开页面
+        document.title = "您忘了我嘛qwq ヽ(*o>Д<)o゜";
+        if (welcomeTimeout) {
+          clearTimeout(welcomeTimeout);
+          welcomeTimeout = null;
+        }
+      } else {
+        // 返回页面
+        document.title = "欢迎回来awa ヾ(≧▽≦*)o";
+        
+        // 清理之前的定时器
+        if (welcomeTimeout) clearTimeout(welcomeTimeout);
+        
+        // 设置新定时器
+        welcomeTimeout = setTimeout(() => {
+          document.title = originalTitle;
+          welcomeTimeout = null;
+        }, 2000);
+      }
+    }
+    
+    // 添加事件监听
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    // 页面卸载时清理
+    window.addEventListener('beforeunload', () => {
+      if (welcomeTimeout) {
+        clearTimeout(welcomeTimeout);
+      }
+    });
+    
+  })();
+</script>
+
             
     
             
@@ -838,6 +883,9 @@ const fontPolice = setInterval(() => {
 		
 
 		<p>Eulogy姓林，你可以跟叫Empty一样叫她林某某（</p>
+<p>她是女的，是的，是女的。而且很漂亮awa  </p>
+<p>然后，具体的情报也不能多说，只能告诉你Eu会随着故事的发展而逐渐找回记忆的。那这个界面也随着Eu的成长而完善吧。  </p>
+<p>免责声明：更新频率不保障，随缘更新。  </p>
 
 	</div>
 
@@ -874,7 +922,7 @@ const fontPolice = setInterval(() => {
                     </span>
                     
                         <span>
-                            共 3k 字
+                            共 4.5k 字
                         </span>
                     
                 </p>

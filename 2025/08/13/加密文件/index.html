@@ -233,6 +233,51 @@
             
     
             
+                
+                    <script>
+  (function() {
+    'use strict';
+    
+    const originalTitle = document.title;
+    let welcomeTimeout = null;
+    
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        // 离开页面
+        document.title = "您忘了我嘛qwq ヽ(*o>Д<)o゜";
+        if (welcomeTimeout) {
+          clearTimeout(welcomeTimeout);
+          welcomeTimeout = null;
+        }
+      } else {
+        // 返回页面
+        document.title = "欢迎回来awa ヾ(≧▽≦*)o";
+        
+        // 清理之前的定时器
+        if (welcomeTimeout) clearTimeout(welcomeTimeout);
+        
+        // 设置新定时器
+        welcomeTimeout = setTimeout(() => {
+          document.title = originalTitle;
+          welcomeTimeout = null;
+        }, 2000);
+      }
+    }
+    
+    // 添加事件监听
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    // 页面卸载时清理
+    window.addEventListener('beforeunload', () => {
+      if (welcomeTimeout) {
+        clearTimeout(welcomeTimeout);
+      }
+    });
+    
+  })();
+</script>
+
+            
     
             
     
@@ -1068,7 +1113,7 @@ import {initHBE} from "/js/plugins/hbe.js";
                     </span>
                     
                         <span>
-                            共 3k 字
+                            共 4.5k 字
                         </span>
                     
                 </p>

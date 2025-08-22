@@ -233,6 +233,51 @@
             
     
             
+                
+                    <script>
+  (function() {
+    'use strict';
+    
+    const originalTitle = document.title;
+    let welcomeTimeout = null;
+    
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        // 离开页面
+        document.title = "您忘了我嘛qwq ヽ(*o>Д<)o゜";
+        if (welcomeTimeout) {
+          clearTimeout(welcomeTimeout);
+          welcomeTimeout = null;
+        }
+      } else {
+        // 返回页面
+        document.title = "欢迎回来awa ヾ(≧▽≦*)o";
+        
+        // 清理之前的定时器
+        if (welcomeTimeout) clearTimeout(welcomeTimeout);
+        
+        // 设置新定时器
+        welcomeTimeout = setTimeout(() => {
+          document.title = originalTitle;
+          welcomeTimeout = null;
+        }, 2000);
+      }
+    }
+    
+    // 添加事件监听
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    // 页面卸载时清理
+    window.addEventListener('beforeunload', () => {
+      if (welcomeTimeout) {
+        clearTimeout(welcomeTimeout);
+      }
+    });
+    
+  })();
+</script>
+
+            
     
             
     
@@ -853,14 +898,14 @@ const fontPolice = setInterval(() => {
 				</li>
 			
 				<li>
-					<a data-weight="2" href="/tags/%E5%85%B6%E5%AE%83/">
-						<i class="fa-solid fa-hashtag"></i>其它
+					<a data-weight="1" href="/tags/%E5%BF%86%E8%B4%A8%E5%8D%9A%E7%89%A9%E9%A6%86/">
+						<i class="fa-solid fa-hashtag"></i>忆质博物馆
 					</a>
 				</li>
 			
 				<li>
-					<a data-weight="1" href="/tags/%E5%BF%86%E8%B4%A8%E5%8D%9A%E7%89%A9%E9%A6%86/">
-						<i class="fa-solid fa-hashtag"></i>忆质博物馆
+					<a data-weight="2" href="/tags/%E5%85%B6%E5%AE%83/">
+						<i class="fa-solid fa-hashtag"></i>其它
 					</a>
 				</li>
 			
@@ -910,7 +955,7 @@ const fontPolice = setInterval(() => {
                     </span>
                     
                         <span>
-                            共 3k 字
+                            共 4.5k 字
                         </span>
                     
                 </p>
