@@ -1,8 +1,16 @@
 @font-face {
     font-family: 'LXGWWenKaiMonoGB';
     src: local('LXGWWenKaiMonoGB'), 
+         url('LXGWWenKaiMonoGB.woff2') format('woff2'),
          url('LXGWWenKaiMonoGB.ttf') format('truetype');
-    font-weight: 200 700;
-    font-display: swap;
+    font-weight: normal;
     font-style: normal;
+    font-display: swap;
+}
+@font-face {
+  font-family: 'LXGWWenKaiGB';
+  src: url('LXGWWenKaiGB-Medium.woff2') format('woff2'),
+       url('LXGWWenKaiGB-Medium.ttf') format('truetype');
+  font-weight: bold;
+  font-display: swap;
 }
