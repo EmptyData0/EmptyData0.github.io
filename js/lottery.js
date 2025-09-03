@@ -1,7 +1,3 @@
-/**
- * 完整抽奖系统 v5.0
- * 功能：抽数系统、保底机制、历史记录、界面优化
- */
 
 const LotteryManager = {
   // ==================== 状态管理 ====================
@@ -112,63 +108,65 @@ const LotteryManager = {
 
   // ==================== DOM操作 ====================
   initDOM() {
-    const container = document.querySelector('.lottery-container');
-    if (!container) throw new Error("找不到抽奖容器");
+  const container = document.querySelector('.lottery-container');
+  if (!container) throw new Error("找不到抽奖容器");
 
-    container.innerHTML = `
-      <div class="action-bar">
-        <button id="singleDraw" class="lottery-button">单抽 (消耗1抽)</button>
-        <button id="multiDraw" class="lottery-button">十连 (消耗10抽)</button>
-        <button id="viewHistory" class="lottery-button">提取记录</button>
-        <div class="counter">
-          保底计数: <span id="guaranteeCounter">${this.getRemainingGuarantee()}</span>/90
-        </div>
+  container.innerHTML = `
+    <div class="action-bar">
+      <button id="singleDraw" class="lottery-button">单抽 (消耗1抽)</button>
+      <button id="multiDraw" class="lottery-button">十连 (消耗10抽)</button>
+      <button id="viewHistory" class="lottery-button">提取记录</button>
+      <button id="probabilityDetail" class="probability-button">概率详情</button>
+      <div class="counter">
+        保底计数: <span id="guaranteeCounter">${this.getRemainingGuarantee()}</span>/90
       </div>
-      
-      <div class="results-area">
-        <h3>提取结果</h3>
-        <div id="lotteryResults" class="results-grid"></div>
+    </div>
+    
+    <div class="results-area">
+      <h3>提取结果</h3>
+      <div id="lotteryResults" class="results-grid"></div>
+    </div>
+    
+    <div class="pool-display" style="display: none;">
+      <h3>概率详情</h3>
+      <div id="prizePool" class="prize-pool"></div>
+    </div>
+    
+    <div class="ticket-section">
+      <button id="getTicketBtn" class="ticket-button">点击获取抽数</button>
+      <div class="ticket-counter">当前抽数: <span id="ticketCount">1</span></div>
+    </div>
+    
+    <div id="lotteryModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modalMessage"></p>
       </div>
-      
-      <div class="pool-display">
-        <h3>概率详情</h3>
-        <div id="prizePool" class="prize-pool"></div>
-      </div>
-      
-      <div class="ticket-section">
-        <button id="getTicketBtn" class="ticket-button">点击获取抽数</button>
-        <div class="ticket-counter">当前抽数: <span id="ticketCount">1</span></div>
-      </div>
-      
-      <div id="lotteryModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p id="modalMessage"></p>
-        </div>
-      </div>
-    `;
+    </div>
+  `;
 
-    this.state.domRefs = {
-      container,
-      results: document.getElementById('lotteryResults'),
-      prizePool: document.getElementById('prizePool'),
-      buttons: {
-        single: document.getElementById('singleDraw'),
-        multi: document.getElementById('multiDraw'),
-        history: document.getElementById('viewHistory'),
-        getTicket: document.getElementById('getTicketBtn')
-      },
-      counters: {
-        guarantee: document.getElementById('guaranteeCounter'),
-        ticket: document.getElementById('ticketCount')
-      },
-      modal: {
-        element: document.getElementById('lotteryModal'),
-        message: document.getElementById('modalMessage'),
-        close: document.querySelector('.close')
-      }
-    };
-  },
+  this.state.domRefs = {
+    container,
+    results: document.getElementById('lotteryResults'),
+    prizePool: document.getElementById('prizePool'),
+    buttons: {
+      single: document.getElementById('singleDraw'),
+      multi: document.getElementById('multiDraw'),
+      history: document.getElementById('viewHistory'),
+      getTicket: document.getElementById('getTicketBtn'),
+      probability: document.getElementById('probabilityDetail') // 新增按钮引用
+    },
+    counters: {
+      guarantee: document.getElementById('guaranteeCounter'),
+      ticket: document.getElementById('ticketCount')
+    },
+    modal: {
+      element: document.getElementById('lotteryModal'),
+      message: document.getElementById('modalMessage'),
+      close: document.querySelector('.close')
+    }
+  };
+},
 
   render() {
     this.renderPrizePool();
@@ -529,20 +527,50 @@ const LotteryManager = {
 
   // ==================== 事件监听 ====================
   setupEventListeners() {
-    const { buttons, modal } = this.state.domRefs;
-    
-    buttons.single.addEventListener('click', () => this.performDraw(1));
-    buttons.multi.addEventListener('click', () => this.performDraw(10));
-    buttons.history.addEventListener('click', () => {
-      window.location.href = '/lottery/history';
-    });
-    buttons.getTicket.addEventListener('click', () => this.addTicket());
-    
-    modal.close.addEventListener('click', () => this.closeModal());
-    modal.element.addEventListener('click', (e) => {
-      if (e.target === modal.element) this.closeModal();
-    });
-  },
+  const { buttons, modal } = this.state.domRefs;
+  
+  buttons.single.addEventListener('click', () => this.performDraw(1));
+  buttons.multi.addEventListener('click', () => this.performDraw(10));
+  buttons.history.addEventListener('click', () => {
+    window.location.href = '/lottery/history';
+  });
+  buttons.getTicket.addEventListener('click', () => this.addTicket());
+  
+  // 添加概率详情按钮事件
+  buttons.probability.addEventListener('click', () => this.showProbabilityModal());
+  
+  modal.close.addEventListener('click', () => this.closeModal());
+  modal.element.addEventListener('click', (e) => {
+    if (e.target === modal.element) this.closeModal();
+  });
+},
+
+showProbabilityModal() {
+  const { message, element } = this.state.domRefs.modal;
+  const { prizeCategories } = this.state.config;
+  
+  message.innerHTML = `
+    <h3>概率详情</h3>
+    <div class="modal-prize-pool">
+      ${prizeCategories.map(category => `
+        <div class="modal-prize-category-item">
+          <strong>${category.name} (${(category.probability * 100).toFixed(1)}%)</strong>
+          ${category.subPrizes?.length ? `
+            <div class="modal-sub-prizes">
+              ${category.subPrizes.map(sub => `
+                <div class="modal-sub-prize-item">
+                  ${sub.name} ${sub.probability ? `(${(sub.probability * 100).toFixed(1)}%)` : ''}
+                </div>
+              `).join('')}
+            </div>
+          ` : ''}
+        </div>
+      `).join('')}
+    </div>
+  `;
+  
+  element.style.display = 'block';
+},
 
   // ==================== 历史记录页面 ====================
   showHistoryPage() {
