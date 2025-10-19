@@ -884,6 +884,117 @@ document.addEventListener('DOMContentLoaded', function() {
 
             
     
+            
+                
+                    <style>
+  /* Win7 Edge 兼容性修复 */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE/Edge 专属修复 */
+    .home-banner {
+      background-image: var(--home-banner-image) !important;
+    }
+  }
+  
+  /* 强制单张背景图显示 */
+  .home-banner {
+    background-image: url('https://s21.ax1x.com/2025/10/02/pVTdNVI.jpg') !important;
+  }
+  
+  /* 暗色模式单独处理 */
+  @media (prefers-color-scheme: dark) {
+    .home-banner {
+      background-image: url('https://s21.ax1x.com/2025/10/02/pVTdhGT.png') !important;
+    }
+  }
+</style>
+
+            
+    
+            
+                
+                    <style>
+  /* 布局兼容性修复 */
+  body {
+    display: block !important;
+  }
+  
+  .main-container {
+    display: block !important;
+    position: relative !important;
+  }
+  
+  .home-banner-container {
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
+  .main-content {
+    position: relative !important;
+    z-index: 5 !important;
+  }
+  
+  /* 确保内容正常显示 */
+  .article-container,
+  .sidebar {
+    position: static !important;
+    float: none !important;
+  }
+  
+  /* 清除可能影响布局的现代CSS特性 */
+  .home-banner {
+    transform: none !important;
+    will-change: auto !important;
+  }
+</style>
+  </head><body>- |
+<script>
+  // 检测旧版Edge浏览器
+  function isOldEdge() {
+    return navigator.userAgent.includes('Edge') || 
+           navigator.userAgent.includes('MSIE') ||
+           /Trident.*rv:/.test(navigator.userAgent);
+  }
+  
+  if (isOldEdge()) {
+    // 添加降级样式类
+    document.documentElement.classList.add('old-edge-browser');
+    
+    // 简化动画效果
+    const style = document.createElement('style');
+    style.textContent = `
+      .old-edge-browser * {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+      }
+      .old-edge-browser .home-banner {
+        background-attachment: scroll !important;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+</script>
+
+            
+    
+            
+                
+                    <!-- KaTeX CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+
+<style>
+  /* KaTeX 样式调整 */
+  .katex { font-size: 1.05em; }
+  .katex-display { margin: 1em 0; }
+  .katex-display > .katex { display: inline-block; white-space: nowrap; }
+  /* 确保在暗色模式下公式可读 */
+  @media (prefers-color-scheme: dark) {
+    .katex { color: #e6e6e6; }
+  }
+</style>
+
+            
+    
 
     
 <link rel="stylesheet" href="/css/style.css">
@@ -927,11 +1038,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-<meta name="generator" content="Hexo 7.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0">
 
 
 
-<body>
+
 	<div class="progress-bar-container">
 	
 	<span class="scroll-progress-bar"></span>
