@@ -626,9 +626,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const config = {
       imageUrl: '/images/superface.png',
       messages: [
-        "你说的对，但是1",
-        "你说的对，但是2",
-        "你说的对，但是3",
+        "看到这句话的人你真的很幸运，因为……算了，不说了。",
+        "你要不试试在在网址里面加一些妙妙后缀？",
+        "撒由那拉撒由那拉coin locker baby～",
         "你说的对，但是4",
         "你说的对，但是5",
         "你说的对，但是6",
@@ -975,19 +975,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
             
                 
-                    <!-- KaTeX CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
-
-<style>
-  /* KaTeX 样式调整 */
-  .katex { font-size: 1.05em; }
-  .katex-display { margin: 1em 0; }
-  .katex-display > .katex { display: inline-block; white-space: nowrap; }
-  /* 确保在暗色模式下公式可读 */
-  @media (prefers-color-scheme: dark) {
-    .katex { color: #e6e6e6; }
-  }
-</style>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ],
+      throwOnError: false
+    });
+  });
+</script>
 
             
     
@@ -1034,7 +1037,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-<meta name="generator" content="Hexo 7.3.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
 
 
 
@@ -1748,9 +1755,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="home-article-content markdown-body">
                         
                             
-                            孩子们等我下周来写
-下周不拖更了qwq
-
+                            Day 0www晚上写了几个板子，KMP、缩点、最短路还有几个分块的题目。欸我真菜吧连板子都写不明白，比如KMP用字符串就会写爆炸非得用字符数组这一块。后来想了又想KMP算了吧，CSP-S总不会出一些很出生的字符串题目。
+（后话：但是事实证明我错了。emmm，ccf真的没有浮木吧，多模字符串匹配，要不AC自动机写，要不写一个很猎奇的时间复杂度。什么叫字符串紫题啊（战术后仰））
+另附AC自动机...
                         
                     </div>
 
@@ -1942,12 +1949,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                         <li>
                             
-                            <a href="/tags/%E2%96%AE%E2%96%AE%E2%96%AE/">▮▮▮</a>&nbsp;
+                            <a href="/tags/Eulogy/">Eulogy</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/Eulogy/">Eulogy</a>&nbsp;
+                            <a href="/tags/%E2%96%AE%E2%96%AE%E2%96%AE/">▮▮▮</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -2025,12 +2032,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                         <li>
                             
-                            <a href="/tags/%E5%BF%86%E8%B4%A8%E5%8D%9A%E7%89%A9%E9%A6%86/">忆质博物馆</a>&nbsp;
+                            <a href="/tags/%E2%96%AE%E2%96%AE%E2%96%AE/">▮▮▮</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/%E2%96%AE%E2%96%AE%E2%96%AE/">▮▮▮</a>&nbsp;
+                            <a href="/tags/%E5%BF%86%E8%B4%A8%E5%8D%9A%E7%89%A9%E9%A6%86/">忆质博物馆</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -2215,7 +2222,7 @@ Qu...
                     </span>
                     
                         <span>
-                            共 4.6k 字
+                            共 5.2k 字
                         </span>
                     
                 </p>

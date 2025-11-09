@@ -628,9 +628,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const config = {
       imageUrl: '/images/superface.png',
       messages: [
-        "你说的对，但是1",
-        "你说的对，但是2",
-        "你说的对，但是3",
+        "看到这句话的人你真的很幸运，因为……算了，不说了。",
+        "你要不试试在在网址里面加一些妙妙后缀？",
+        "撒由那拉撒由那拉coin locker baby～",
         "你说的对，但是4",
         "你说的对，但是5",
         "你说的对，但是6",
@@ -977,19 +977,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
             
                 
-                    <!-- KaTeX CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
-
-<style>
-  /* KaTeX 样式调整 */
-  .katex { font-size: 1.05em; }
-  .katex-display { margin: 1em 0; }
-  .katex-display > .katex { display: inline-block; white-space: nowrap; }
-  /* 确保在暗色模式下公式可读 */
-  @media (prefers-color-scheme: dark) {
-    .katex { color: #e6e6e6; }
-  }
-</style>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ],
+      throwOnError: false
+    });
+  });
+</script>
 
             
     
@@ -1036,7 +1039,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-<meta name="generator" content="Hexo 7.3.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
 
 
 
@@ -1557,9 +1564,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 
 		<p>Eulogy姓林，你可以跟叫Empty一样叫她林某某（</p>
-<p>她是女的，是的，是女的。而且很漂亮awa</p>
-<p>然后，具体的情报也不能多说，只能告诉你Eu会随着故事的发展而逐渐找回记忆的。那这个界面也随着Eu的成长而完善吧。</p>
-<p>免责声明：更新频率不保障，随缘更新。</p>
+<p>她是女的，是的，是女的。而且很漂亮awa  </p>
+<p>然后，具体的情报也不能多说，只能告诉你Eu会随着故事的发展而逐渐找回记忆的。那这个界面也随着Eu的成长而完善吧。  </p>
+<p>免责声明：更新频率不保障，随缘更新。  </p>
 
 	</div>
 
@@ -1596,7 +1603,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </span>
                     
                         <span>
-                            共 4.6k 字
+                            共 5.2k 字
                         </span>
                     
                 </p>
